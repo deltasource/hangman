@@ -26,7 +26,7 @@
 				<artifactId>exec-maven-plugin</artifactId>
 				<version>3.1.0</version>
 				<configuration>
-					<mainClass>eu.deltasource.hangman.Hangman</mainClass>
+					<mainClass>eu.deltasource.hangman.HangmanApp</mainClass>
 				</configuration>
 			</plugin>
 		</plugins>
