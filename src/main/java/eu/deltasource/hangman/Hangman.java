@@ -7,7 +7,7 @@ public class Hangman {
     private int maxErrors;
     private int error;
 
-    public void hangman() {
+    public void hangmanDrawing() {
 	switch (error) {
 	case 0:
 	    System.out.println("   -------\r\n" + "   |     |\r\n" + "   |\r\n" + "   |\r\n" + "   |\r\n"
@@ -53,7 +53,7 @@ public class Hangman {
 
 	while (!hangmanwordguess.getGuessedWord().equals(hangmanwordguess.getWord())
 		&& hangman.getError() != hangman.getMaxErrors()) {
-	    hangman.hangman();
+	    hangman.hangmanDrawing();
 	    System.out.println("Guessed Word: " + hangmanwordguess.getGuessedWord());
 	    System.out.println("Pick a letter");
 	    letter = scanner.next();
