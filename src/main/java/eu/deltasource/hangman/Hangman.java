@@ -80,6 +80,7 @@ public class Hangman {
 	    System.out.println("You lose The word was: " + hangmanwordguess.getWord());
 	} else {
 	    System.out.println("You win");
+	    System.out.println("The word is: " + hangmanwordguess.getWord());
 	}
 
     }
