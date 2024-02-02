@@ -7,6 +7,37 @@ public class Hangman {
     private int maxErrors;
     private int error;
 
+    public void hangman() {
+	switch (error) {
+	case 0:
+	    System.out.println("   -------\r\n" + "   |     |\r\n" + "   |\r\n" + "   |\r\n" + "   |\r\n"
+		    + " __|___\r\n" + "/      \\");
+	    break;
+	case 1:
+	    System.out.println("   -------\r\n" + "   |     |\r\n" + "   |     0\r\n" + "   |\r\n" + "   |\r\n"
+		    + " __|___\r\n" + "/      \\");
+	    break;
+	case 2:
+	    System.out.println("   -------\r\n" + "   |     |\r\n" + "   |     0\r\n" + "   |     |\r\n" + "   |\r\n"
+		    + " __|___\r\n" + "/      \\");
+	    break;
+	case 3:
+	    System.out.println("   -------\r\n" + "   |     |\r\n" + "   |     0\r\n" + "   |    \\|\r\n" + "   |\r\n"
+		    + " __|___\r\n" + "/      \\");
+	    break;
+	case 4:
+	    System.out.println("   -------\r\n" + "   |     |\r\n" + "   |     0\r\n" + "   |    \\|/\r\n" + "   |\r\n"
+		    + " __|___\r\n" + "/      \\");
+	    break;
+	case 5:
+	    System.out.println("  -------\r\n" + "   |     |\r\n" + "   |     0\r\n" + "   |    \\|/\r\n"
+		    + "   |	/\r\n" + " __|___\r\n" + "/      \\");
+	    break;
+	default:
+	    System.out.println("404 error");
+	}
+    }
+
     public Hangman() {
 	setMaxErrors(6);
 	error = 0;
@@ -22,6 +53,8 @@ public class Hangman {
 
 	while (!hangmanwordguess.getGuessedWord().equals(hangmanwordguess.getWord())
 		&& hangman.getError() != hangman.getMaxErrors()) {
+	    hangman.hangman();
+	    System.out.println("Guessed Word: " + hangmanwordguess.getGuessedWord());
 	    System.out.println("Pick a letter");
 	    letter = scanner.next();
 
@@ -36,12 +69,14 @@ public class Hangman {
 		hangman.setError(hangman.getError() + 1);
 	    }
 
-	    System.out.println("Guessed Word: " + hangmanwordguess.getGuessedWord());
 	    System.out.println();
 	    System.out.println("Available Characters: " + hangmanwordguess.getAvailableCharacters());
+	    letter = null;
 	}
 
 	if (hangman.getError() == hangman.getMaxErrors()) {
+	    System.out.println("   -------\r\n" + "   |     |\r\n" + "   |     0\r\n" + "   |    \\|/\r\n"
+		    + "   |	/ \\\r\n" + " __|___\r\n" + "/      \\");
 	    System.out.println("You lose The word was: " + hangmanwordguess.getWord());
 	} else {
 	    System.out.println("You win");

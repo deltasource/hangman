@@ -30,9 +30,9 @@ public class HangmanWordGuess {
 
     public String getGuessedWord() {
 	StringBuilder guessedWord = new StringBuilder();
-	for (int i = 0; i <= word.length() - 1; i++) {
+	for (int i = 0; i < word.length(); i++) {
 	    if (guessedCharacters.contains(word.charAt(i))) {
-		guessedWord.append(guessedCharacters.get(i).toString());
+		guessedWord.append(word.charAt(i));
 	    } else {
 		guessedWord.append("-");
 	    }
