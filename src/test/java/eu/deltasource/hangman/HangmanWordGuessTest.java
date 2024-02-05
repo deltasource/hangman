@@ -17,7 +17,7 @@ public class HangmanWordGuessTest {
     public void getGuessedWithOneGuessedCharacter() {
 	// given
 	hangmanword.setWord("apple");
-	List<Character> listOfCharacters = new ArrayList<Character>();
+	List<Character> listOfCharacters = new ArrayList<>();
 	listOfCharacters.add('a');
 	hangmanword.setGuessedCharacters(listOfCharacters);
 	// When
@@ -32,7 +32,7 @@ public class HangmanWordGuessTest {
     public void getGuessedWithNoGuessedCharacter() {
 	// given
 	hangmanword.setWord("work");
-	List<Character> listOfCharacters = new ArrayList<Character>();
+	List<Character> listOfCharacters = new ArrayList<>();
 	listOfCharacters.add('a');
 	listOfCharacters.add('h');
 	hangmanword.setGuessedCharacters(listOfCharacters);
@@ -49,7 +49,7 @@ public class HangmanWordGuessTest {
     public void getGuessedWithAllGuessedCharacter() {
 	// given
 	hangmanword.setWord("work");
-	List<Character> listOfCharacters = new ArrayList<Character>();
+	List<Character> listOfCharacters = new ArrayList<>();
 	listOfCharacters.add('w');
 	listOfCharacters.add('o');
 	listOfCharacters.add('r');
