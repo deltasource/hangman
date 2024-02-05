@@ -1,115 +1,111 @@
 package eu.deltasource.hangman;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
-import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class HangmanWordGuessTest {
     HangmanWordGuess hangmanword = new HangmanWordGuess();
 
     @Test
     public void getGuessedWithOneGuessedCharacter() {
-	// given
-	hangmanword.setWord("apple");
-	List<Character> listOfCharacters = new ArrayList<Character>();
-	listOfCharacters.add('a');
-	hangmanword.setGuessedCharacters(listOfCharacters);
-	// When
-	String result = hangmanword.getGuessedWord();
+        // given
+        hangmanword.setWord("apple");
+        List<Character> listOfCharacters = new ArrayList<>();
+        listOfCharacters.add('a');
+        hangmanword.setGuessedCharacters(listOfCharacters);
+        // When
+        String result = hangmanword.getGuessedWord();
 
-	// Then
-
-	assertEquals("a----", result);
+        // Then
+        assertThat(result).isEqualTo("a----");
     }
 
     @Test
     public void getGuessedWithNoGuessedCharacter() {
-	// given
-	hangmanword.setWord("work");
-	List<Character> listOfCharacters = new ArrayList<Character>();
-	listOfCharacters.add('a');
-	listOfCharacters.add('h');
-	hangmanword.setGuessedCharacters(listOfCharacters);
+        // given
+        hangmanword.setWord("work");
+        List<Character> listOfCharacters = new ArrayList<>();
+        listOfCharacters.add('a');
+        listOfCharacters.add('h');
+        hangmanword.setGuessedCharacters(listOfCharacters);
 
-	// When
-	String result = hangmanword.getGuessedWord();
+        // When
+        String result = hangmanword.getGuessedWord();
 
-	// Then
-
-	assertEquals("----", result);
+        // Then
+        assertThat(result).isEqualTo("----");
     }
 
     @Test
     public void getGuessedWithAllGuessedCharacter() {
-	// given
-	hangmanword.setWord("work");
-	List<Character> listOfCharacters = new ArrayList<Character>();
-	listOfCharacters.add('w');
-	listOfCharacters.add('o');
-	listOfCharacters.add('r');
-	listOfCharacters.add('k');
-	hangmanword.setGuessedCharacters(listOfCharacters);
+        // given
+        hangmanword.setWord("work");
+        List<Character> listOfCharacters = new ArrayList<>();
+        listOfCharacters.add('w');
+        listOfCharacters.add('o');
+        listOfCharacters.add('r');
+        listOfCharacters.add('k');
+        hangmanword.setGuessedCharacters(listOfCharacters);
 
-	// When
-	String result = hangmanword.getGuessedWord();
+        // When
+        String result = hangmanword.getGuessedWord();
 
-	// Then
+        // Then
 
-	assertEquals("work", result);
+        assertThat(result).isEqualTo("work");
     }
 
     @Test
     public void getGuessTrue() {
-	// Given
-	hangmanword.setWord("work");
+        // Given
+        hangmanword.setWord("work");
 
-	// When
-	boolean guessCharacter = hangmanword.guessCharacter('o');
-	
-	// Then
-	assertTrue(guessCharacter);
+        // When
+        boolean guessCharacter = hangmanword.guessCharacter('o');
+
+        // Then
+        assertThat(guessCharacter).isTrue();
     }
 
     @Test
     public void getGuessFalse() {
-	// Given
-	hangmanword.setWord("work");
-	
-	// When
-	boolean guessCharacter = hangmanword.guessCharacter('a');
-	
-	// Then
-	assertFalse(guessCharacter);
+        // Given
+        hangmanword.setWord("work");
+
+        // When
+        boolean guessCharacter = hangmanword.guessCharacter('a');
+
+        // Then
+        assertThat(guessCharacter).isFalse();
     }
-    
+
     @Test
     public void removeOneAvailableCharacter() {
-	// Given
-	hangmanword.guessCharacter('a');
-	
-	// When
-	String result = hangmanword.getAvailableCharacters();
-	
-	// Then
-	assertEquals("bcdefghijklmnopqrstuvwxyz", result);
+        // Given
+        hangmanword.guessCharacter('a');
+
+        // When
+        String result = hangmanword.getAvailableCharacters();
+
+        // Then
+        assertThat(result).isEqualTo("bcdefghijklmnopqrstuvwxyz");
     }
-    
+
     @Test
     public void removeTwoAvailableCharacter() {
-	// Given
-	hangmanword.guessCharacter('a');
-	hangmanword.guessCharacter('c');
-	
-	// When
-	String result = hangmanword.getAvailableCharacters();
-	
-	// Then
-	assertEquals("bdefghijklmnopqrstuvwxyz", result);
+        // Given
+        hangmanword.guessCharacter('a');
+        hangmanword.guessCharacter('c');
+
+        // When
+        String result = hangmanword.getAvailableCharacters();
+
+        // Then
+        assertThat(result).isEqualTo("bdefghijklmnopqrstuvwxyz");
+
     }
 }

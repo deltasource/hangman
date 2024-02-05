@@ -6,9 +6,9 @@ import java.util.List;
 
 public class HangmanWordGuess {
 
-    private List<Character> guessedCharacters = new ArrayList<Character>();
+    private List<Character> guessedCharacters = new ArrayList<>();
     private String word;
-    private List<Character> listOfAvailableCharacters = new ArrayList<Character>();
+    private final List<Character> listOfAvailableCharacters = new ArrayList<>();
     public HangmanWordGenerator hangmanword = new HangmanWordGenerator();
 
     public HangmanWordGuess() {

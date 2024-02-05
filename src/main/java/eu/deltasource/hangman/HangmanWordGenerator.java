@@ -5,7 +5,7 @@ import java.util.List;
 
 public class HangmanWordGenerator {
 
-    private List<String> wordList = new ArrayList<String>();
+    private final List<String> wordList = new ArrayList<>();
 
     public HangmanWordGenerator() {
 	wordList.add("work");
