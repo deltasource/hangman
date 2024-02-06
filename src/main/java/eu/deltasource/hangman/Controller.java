@@ -71,9 +71,11 @@ public class Controller {
 	    if (hangman.getError() == hangman.getMaxErrors()) {
 		print.setText("You lose The word was: " + hangmanwordguess.getWord());
 		teller++;
+		restart.setVisible(true);
 	    } else if (hangmanwordguess.getWord().equals(geussedWord.getText())) {
 		print.setText("You win");
 		teller++;
+		restart.setVisible(true);
 	    } else {
 		print.setText("");
 	    }
@@ -94,6 +96,7 @@ public class Controller {
 	hangmanwordguess = new HangmanWordGuess();
 	geussedWord.setText(hangmanwordguess.getGuessedWord());
 	availableChar.setText(hangmanwordguess.getAvailableCharacters());
+	print.setText("");
 	restart.setVisible(false);
     }
 }
