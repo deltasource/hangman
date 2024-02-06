@@ -80,13 +80,14 @@ public class Controller {
 		print.setText("");
 	    }
 	} else {
-
+	    
 	}
     }
 
     public void stop() {
 	teller++;
 	restart.setVisible(true);
+	print.setText("You lose The word was: " + hangmanwordguess.getWord());
     }
     
     public void restart() {

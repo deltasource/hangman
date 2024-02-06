@@ -5,7 +5,7 @@ import java.util.Scanner;
 import eu.deltasource.hangman.Hangman;
 import eu.deltasource.hangman.HangmanWordGuess;
 
-public class Main2 {
+public class HangmanPlay {
 
     public static void main(String[] args) throws FileNotFoundException {
    	Hangman hangman = new Hangman();
