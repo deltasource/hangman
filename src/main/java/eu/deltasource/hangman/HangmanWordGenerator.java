@@ -2,6 +2,7 @@ package eu.deltasource.hangman;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -16,7 +17,8 @@ public class HangmanWordGenerator {
 
     public void readFile(){
 	try {
-	    File file = new File("C:\\Users\\AnassAfqirBouchnafat\\OneDrive - Scholengroep Rivierenland\\Bureaublad\\StageProject\\hangman\\src\\main\\java\\eu\\deltasource\\hangman\\wordList.txt");
+    URL resource = this.getClass().getClassLoader().getResource("wordList.txt");
+    File file = new File(resource.getFile());
             Scanner scanner = new Scanner(file);
 
             while (scanner.hasNextLine()) {
@@ -25,7 +27,7 @@ public class HangmanWordGenerator {
             scanner.close();
         } catch (FileNotFoundException e) {
             System.err.println("Error reading word list file: " + e.getMessage());
-            System.exit(1);
+            System.exit(1); // don't do this in non-main classes: throw an exception here, let main class handle it.
         }
     }
     
