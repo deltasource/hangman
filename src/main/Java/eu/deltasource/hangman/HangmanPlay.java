@@ -11,7 +11,6 @@ public class HangmanPlay {
     public static void main(String[] args) throws FileNotFoundException {
 	Hangman hangman = new Hangman();
 	HangmanWordGuess hangmanwordguess = new HangmanWordGuess();
-	// System.out.println(hangmanwordguess.getWord());
 	System.out.println("If you want to stop te game click '-'");
 	Scanner scanner = new Scanner(System.in);
 	Character character = null;

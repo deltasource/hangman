@@ -49,28 +49,7 @@ public class Controller {
 	    geussedWord.setText(hangmanwordguess.getGuessedWord());
 	    letter.clear();
 
-	    switch (hangman.getError()) {
-	    case 0:
-		printGallow.setImage(new Image(gallow(1)));
-		break;
-	    case 1:
-		printGallow.setImage(new Image(gallow(2)));
-		break;
-	    case 2:
-		printGallow.setImage(new Image(gallow(3)));
-		break;
-	    case 3:
-		printGallow.setImage(new Image(gallow(4)));
-		break;
-	    case 4:
-		printGallow.setImage(new Image(gallow(5)));
-		break;
-	    case 5:
-		printGallow.setImage(new Image(gallow(6)));
-		break;
-	    case 6:
-		printGallow.setImage(new Image(gallow(7)));
-	    }
+	    printGallow.setImage(new Image(gallow(hangman.getError()+1)));
 
 	    if (hangman.getError() == hangman.getMaxErrors()) {
 		print.setText("You lose The word was: " + hangmanwordguess.getWord());
