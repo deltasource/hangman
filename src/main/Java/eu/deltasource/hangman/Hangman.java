@@ -1,82 +1,45 @@
 package eu.deltasource.hangman;
 
-import java.util.Scanner;
-
 public class Hangman {
 
     private int maxErrors;
     private int error;
-    
+
     public Hangman() {
 	setMaxErrors(6);
 	error = 0;
     }
-    
+
     public String printHead(int error) {
-	if(error >= 1) {
-	    return "0";
-	}
-	else if(error ==0) {
-	    return "";
-	}
-	return "";
+	return error >= 1 ? "0" : "";
     }
-    
+
     public String printBody(int error) {
-	if(error == 2) {
-	    return " |";
-	}
-	else if(error > 2) {
-	    return "|";
-	}
-	else if(error ==0) {
-	    return "";
-	}
-	return "";
+	return error == 2 ? " |" : error > 2 ? "|" : " ";
     }
+
     public String printLeftArm(int error) {
-	if(error >= 3) {
-	    return "\\";
-	}
-	else if(error ==0) {
-	    return "";
-	}
-	return "";
+	return error >= 3 ? "\\" : "";
     }
+
     public String printRightArm(int error) {
-	if(error >= 4) {
-	    return "/";
-	}
-	else if(error ==0) {
-	    return "";
-	}
-	return "";
+	return error >= 4 ? "/" : "";
     }
+
     public String printLeftLeg(int error) {
-	if(error >= 5) {
-	    return "/";
-	}
-	else if(error ==0) {
-	    return "";
-	}
-	return "";
+	return error >= 5 ? "/" : "";
     }
+
     public String printRightLeg(int error) {
-	if(error >= 6) {
-	    return "\\";
-	}
-	else if(error ==0) {
-	    return "";
-	}
-	return "";
+	return error >= 6 ? "\\" : "";
     }
 
     public void printGallow(int error) {
 	System.out.println("   -------");
 	System.out.println("   |     |");
-	System.out.println("   |     "+printHead(error));
-	System.out.println("   |    "+printLeftArm(error)+printBody(error)+printRightArm(error));
-	System.out.println("   |	"+printLeftLeg(error)+" "+printRightLeg(error));
+	System.out.println("   |     " + printHead(error));
+	System.out.println("   |    " + printLeftArm(error) + printBody(error) + printRightArm(error));
+	System.out.println("   |	" + printLeftLeg(error) + " " + printRightLeg(error));
 	System.out.println(" __|___");
 	System.out.println("/      \\");
     }

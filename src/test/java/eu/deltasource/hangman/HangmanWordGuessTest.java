@@ -71,7 +71,7 @@ public class HangmanWordGuessTest {
 
 	// When
 	boolean guessCharacter = hangmanword.guessCharacter('o');
-	
+
 	// Then
 	assertTrue(guessCharacter);
     }
@@ -80,35 +80,35 @@ public class HangmanWordGuessTest {
     public void getGuessFalse() {
 	// Given
 	hangmanword.setWord("work");
-	
+
 	// When
 	boolean guessCharacter = hangmanword.guessCharacter('a');
-	
+
 	// Then
 	assertFalse(guessCharacter);
     }
-    
+
     @Test
     public void removeOneAvailableCharacter() {
 	// Given
 	hangmanword.guessCharacter('a');
-	
+
 	// When
 	String result = hangmanword.getAvailableCharacters();
-	
+
 	// Then
 	assertEquals("bcdefghijklmnopqrstuvwxyz", result);
     }
-    
+
     @Test
     public void removeTwoAvailableCharacter() {
 	// Given
 	hangmanword.guessCharacter('a');
 	hangmanword.guessCharacter('c');
-	
+
 	// When
 	String result = hangmanword.getAvailableCharacters();
-	
+
 	// Then
 	assertEquals("bdefghijklmnopqrstuvwxyz", result);
     }
