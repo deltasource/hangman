@@ -17,7 +17,7 @@ public class HangmanWordGuessTest {
     public void getGuessedWithOneGuessedCharacter() {
 	// given
 	hangmanword.setWord("apple");
-	List<Character> listOfCharacters = new ArrayList<Character>();
+	List<Character> listOfCharacters = new ArrayList<>();
 	listOfCharacters.add('a');
 	hangmanword.setGuessedCharacters(listOfCharacters);
 	// When
@@ -32,7 +32,7 @@ public class HangmanWordGuessTest {
     public void getGuessedWithNoGuessedCharacter() {
 	// given
 	hangmanword.setWord("work");
-	List<Character> listOfCharacters = new ArrayList<Character>();
+	List<Character> listOfCharacters = new ArrayList<>();
 	listOfCharacters.add('a');
 	listOfCharacters.add('h');
 	hangmanword.setGuessedCharacters(listOfCharacters);
@@ -49,7 +49,7 @@ public class HangmanWordGuessTest {
     public void getGuessedWithAllGuessedCharacter() {
 	// given
 	hangmanword.setWord("work");
-	List<Character> listOfCharacters = new ArrayList<Character>();
+	List<Character> listOfCharacters = new ArrayList<>();
 	listOfCharacters.add('w');
 	listOfCharacters.add('o');
 	listOfCharacters.add('r');
@@ -71,7 +71,7 @@ public class HangmanWordGuessTest {
 
 	// When
 	boolean guessCharacter = hangmanword.guessCharacter('o');
-	
+
 	// Then
 	assertTrue(guessCharacter);
     }
@@ -80,35 +80,35 @@ public class HangmanWordGuessTest {
     public void getGuessFalse() {
 	// Given
 	hangmanword.setWord("work");
-	
+
 	// When
 	boolean guessCharacter = hangmanword.guessCharacter('a');
-	
+
 	// Then
 	assertFalse(guessCharacter);
     }
-    
+
     @Test
     public void removeOneAvailableCharacter() {
 	// Given
 	hangmanword.guessCharacter('a');
-	
+
 	// When
 	String result = hangmanword.getAvailableCharacters();
-	
+
 	// Then
 	assertEquals("bcdefghijklmnopqrstuvwxyz", result);
     }
-    
+
     @Test
     public void removeTwoAvailableCharacter() {
 	// Given
 	hangmanword.guessCharacter('a');
 	hangmanword.guessCharacter('c');
-	
+
 	// When
 	String result = hangmanword.getAvailableCharacters();
-	
+
 	// Then
 	assertEquals("bdefghijklmnopqrstuvwxyz", result);
     }
