@@ -2,17 +2,14 @@ package eu.deltasource.hangman;
 
 public class Hangman {
 
-    private int maxErrors;
     private int error;
 
     public Hangman() {
-	setMaxErrors(6);
 	error = 0;
     }
     
-    public void foutError() {
-	if(error <0) throw new IllegalArgumentException("Errors can't be under 0");
-	if(error >=7) throw new IllegalArgumentException("Errors can't be above 6");
+    public int maxErrors(int maxErrors) {
+	return maxErrors;
     }
 
     public String printHead(int error) {
@@ -40,15 +37,18 @@ public class Hangman {
     }
 
     public void printGallow(int error) {
-	System.out.println("   -------");
-	System.out.println("   |     |");
-	System.out.println("   |     " + printHead(error));
-	System.out.println("   |    " + printLeftArm(error) + printBody(error) + printRightArm(error));
-	System.out.println("   |	" + printLeftLeg(error) + " " + printRightLeg(error));
-	System.out.println(" __|___");
-	System.out.println("/      \\");
-    }
+	StringBuilder gallow = new StringBuilder();
 
+	gallow.append("   -------").append(System.lineSeparator());
+	gallow.append("   |     |").append(System.lineSeparator());
+	gallow.append("   |     " + printHead(error)).append(System.lineSeparator());
+	gallow.append("   |    " + printLeftArm(error) + printBody(error) + printRightArm(error)).append(System.lineSeparator());
+	gallow.append("   |	" + printLeftLeg(error) + " " + printRightLeg(error)).append(System.lineSeparator());
+	gallow.append(" __|___").append(System.lineSeparator());
+	gallow.append("/      \\");
+	
+	System.out.println(gallow);
+	}
     public int getError() {
 	return error;
     }
@@ -57,11 +57,5 @@ public class Hangman {
 	this.error = error;
     }
 
-    public int getMaxErrors() {
-	return maxErrors;
-    }
-
-    public void setMaxErrors(int maxErrors) {
-	this.maxErrors = maxErrors;
-    }
+    
 }

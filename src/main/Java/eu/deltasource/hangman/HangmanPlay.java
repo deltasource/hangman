@@ -3,9 +3,6 @@ package eu.deltasource.hangman;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-import eu.deltasource.hangman.Hangman;
-import eu.deltasource.hangman.HangmanWordGuess;
-
 public class HangmanPlay {
 
     public static void main(String[] args) throws FileNotFoundException {
@@ -24,7 +21,7 @@ public class HangmanPlay {
 	});
 
 	while (!hangmanwordguess.getGuessedWord().equals(hangmanwordguess.getWord())
-		&& hangman.getError() != hangman.getMaxErrors()) {
+		&& hangman.getError() != hangman.maxErrors(6)) {
 	    hangman.printGallow(hangman.getError());
 	    System.out.println("Guessed Word: " + hangmanwordguess.getGuessedWord());
 	    System.out.println("Pick a letter");
@@ -39,7 +36,6 @@ public class HangmanPlay {
 		System.out.println("only one letter please");
 		continue;
 	    }
-	    hangman.foutError();
 	    if (hangmanwordguess.guessCharacter(character) == false) {
 		hangman.setError(hangman.getError() + 1);
 	    }
@@ -49,7 +45,7 @@ public class HangmanPlay {
 	    letter = null;
 	}
 
-	if (hangman.getError() == hangman.getMaxErrors()) {
+	if (hangman.getError() == hangman.maxErrors(6)) {
 	    hangman.printGallow(hangman.getError());
 	    System.out.println("You lose The word was: " + hangmanwordguess.getWord());
 	} else {

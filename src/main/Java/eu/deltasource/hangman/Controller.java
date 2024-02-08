@@ -16,7 +16,7 @@ public class Controller {
     public ImageView printGallow;
     public Label availableChar;
     public Button restart;
-    public int teller = 0;
+    public int stopGame = 0;
 
     public void initialize() {
 	hangman = new Hangman();
@@ -33,7 +33,7 @@ public class Controller {
 
     public void guess() {
 	Character character = null;
-	if (teller == 0) {
+	if (stopGame == 0) {
 
 	    if (letter.getText().length() == 1) {
 		character = letter.getText().charAt(0);
@@ -41,7 +41,6 @@ public class Controller {
 		print.setText("only one letter please");
 	    }
 	    
-	    	hangman.foutError();
 	    if (hangmanwordguess.guessCharacter(character) == false) {
 		hangman.setError(hangman.getError() + 1);
 	    }
@@ -52,13 +51,13 @@ public class Controller {
 
 	    printGallow.setImage(new Image(gallow(hangman.getError()+1)));
 
-	    if (hangman.getError() == hangman.getMaxErrors()) {
+	    if (hangman.getError() == hangman.maxErrors(6)) {
 		print.setText("You lose The word was: " + hangmanwordguess.getWord());
-		teller++;
+		stopGame++;
 		restart.setVisible(true);
 	    } else if (hangmanwordguess.getWord().equals(geussedWord.getText())) {
 		print.setText("You win");
-		teller++;
+		stopGame++;
 		restart.setVisible(true);
 	    } else {
 		print.setText("");
@@ -67,13 +66,13 @@ public class Controller {
     }
 
     public void stop() {
-	teller++;
+	stopGame++;
 	restart.setVisible(true);
 	print.setText("You lose The word was: " + hangmanwordguess.getWord());
     }
 
     public void restart() {
-	teller = 0;
+	stopGame = 0;
 	hangman.setError(0);
 	printGallow.setImage(new Image(gallow(1)));
 	hangmanwordguess = new HangmanWordGuess();
