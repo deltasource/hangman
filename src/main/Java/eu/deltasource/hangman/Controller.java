@@ -28,7 +28,7 @@ public class Controller {
     }
 
     public String gallow(int gallow) {
-	return "eu/deltasource/hangman/img/galg_" + gallow + ".png";
+	return "/img/galg_" + gallow + ".png";
     }
 
     public void guess() {
