@@ -9,6 +9,11 @@ public class Hangman {
 	setMaxErrors(6);
 	error = 0;
     }
+    
+    public void foutError() {
+	if(error <0) throw new IllegalArgumentException("Errors can't be under 0");
+	if(error >=7) throw new IllegalArgumentException("Errors can't be above 6");
+    }
 
     public String printHead(int error) {
 	return error >= 1 ? "0" : "";

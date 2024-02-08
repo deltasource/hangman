@@ -39,7 +39,7 @@ public class HangmanPlay {
 		System.out.println("only one letter please");
 		continue;
 	    }
-
+	    hangman.foutError();
 	    if (hangmanwordguess.guessCharacter(character) == false) {
 		hangman.setError(hangman.getError() + 1);
 	    }

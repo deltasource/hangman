@@ -40,7 +40,8 @@ public class Controller {
 	    } else {
 		print.setText("only one letter please");
 	    }
-
+	    
+	    	hangman.foutError();
 	    if (hangmanwordguess.guessCharacter(character) == false) {
 		hangman.setError(hangman.getError() + 1);
 	    }
