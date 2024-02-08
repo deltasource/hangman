@@ -2,16 +2,13 @@ package eu.deltasource.hangman;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class HangmanWordGenerator {
 
-    private List<String> wordList = new ArrayList<String>();
+    private List<String> wordList = new ArrayList<>();
     
 
     public HangmanWordGenerator() {
