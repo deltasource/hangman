@@ -41,6 +41,10 @@ public class HangmanWordGuess {
         return guessedWord.toString();
 
     }
+    
+    public boolean isWordGuessed() {
+        return getGuessedWord().equals(word);
+    }
 
     public String getAvailableCharacters() {
         StringBuilder available = new StringBuilder();

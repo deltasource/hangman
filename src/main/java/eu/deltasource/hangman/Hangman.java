@@ -9,6 +9,10 @@ public class Hangman {
         setMaxErrors(6);
         error = 0;
     }
+    
+    public boolean isMaxErrorsReached() {
+        return error >= maxErrors;
+    }
 
     public String printHead(int error) {
         return error >= 1 ? "0" : "";
