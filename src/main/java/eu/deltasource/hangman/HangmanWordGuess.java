@@ -50,9 +50,9 @@ public class HangmanWordGuess {
         return available.toString();
     }
 
-    public List<Character> getGuessedCharacters() {
-        return guessedCharacters;
-    }
+    //public List<Character> getGuessedCharacters() {
+    //return guessedCharacters;
+    //}
 
     public void setGuessedCharacters(List<Character> guessedCharacters) {
         this.guessedCharacters = guessedCharacters;

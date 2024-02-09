@@ -35,13 +35,17 @@ public class Hangman {
     }
 
     public void printGallow(int error) {
-        System.out.println("   -------");
-        System.out.println("   |     |");
-        System.out.println("   |     " + printHead(error));
-        System.out.println("   |    " + printLeftArm(error) + printBody(error) + printRightArm(error));
-        System.out.println("   |	" + printLeftLeg(error) + " " + printRightLeg(error));
-        System.out.println(" __|___");
-        System.out.println("/      \\");
+        StringBuilder gallow = new StringBuilder();
+
+        gallow.append("   -------").append(System.lineSeparator());
+        gallow.append("   |     |").append(System.lineSeparator());
+        gallow.append("   |     " + printHead(error)).append(System.lineSeparator());
+        gallow.append("   |    " + printLeftArm(error) + printBody(error) + printRightArm(error)).append(System.lineSeparator());
+        gallow.append("   |	" + printLeftLeg(error) + " " + printRightLeg(error)).append(System.lineSeparator());
+        gallow.append(" __|___").append(System.lineSeparator());
+        gallow.append("/      \\");
+
+        System.out.println(gallow);
     }
 
     public int getError() {

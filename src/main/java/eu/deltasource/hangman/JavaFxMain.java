@@ -6,6 +6,6 @@ package eu.deltasource.hangman;
  */
 public class JavaFxMain {
     public static void main(String[] args) {
-        Main.main(args);
+        HangmanMain.main(args);
     }
 }

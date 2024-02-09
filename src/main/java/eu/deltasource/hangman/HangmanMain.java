@@ -8,11 +8,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class Main extends Application {
+public class HangmanMain extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        URL resource = Main.class.getResource("/sample.fxml");
+        URL resource = HangmanMain.class.getResource("/sample.fxml");
         System.out.println("resource: " + resource);
         Parent root = FXMLLoader.load(resource);
         primaryStage.setTitle("Hangman");

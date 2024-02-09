@@ -26,7 +26,7 @@ public class HangmanWordGenerator {
             scanner.close();
         } catch (FileNotFoundException e) {
             System.err.println("Error reading word list file: " + e.getMessage());
-            System.exit(1);
+            //TODO throw exception to main
         }
     }
 

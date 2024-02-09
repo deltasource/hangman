@@ -80,7 +80,7 @@
 				<artifactId>exec-maven-plugin</artifactId>
 				<version>3.1.0</version>
 				<configuration>
-					<mainClass>eu.deltasource.hangman.Main</mainClass>
+					<mainClass>eu.deltasource.hangman.HangmanMain</mainClass>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -96,7 +96,7 @@
 				<artifactId>javafx-maven-plugin</artifactId>
 				<version>0.0.8</version>
 				<configuration>
-					<mainClass>eu.deltasource.hangman.Main</mainClass>
+					<mainClass>eu.deltasource.hangman.HangmanMain</mainClass>
 				</configuration>
 			</plugin>
 
